@@ -1,8 +1,17 @@
 * {
-            background-color: black;
+            
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        .body {
+            background-image: url(https://insights.som.yale.edu/sites/default/files/styles/max_1300x1300/public/2022-10/space.jpeg?itok=ee8bV8ok);
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            background-size: auto;
+
         }
 
         .box {
@@ -37,7 +46,7 @@
             position: absolute;
             width: 6px;
             height: 6px;
-            background-color: white;
+            background-color: gold ;
             transform: rotate(45deg);
             box-shadow: 0 0 10px white;
             opacity: 1;
