@@ -1,94 +1,74 @@
 * {
-            
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .body {
-            background-image: url(https://insights.som.yale.edu/sites/default/files/styles/max_1300x1300/public/2022-10/space.jpeg?itok=ee8bV8ok);
-            background-repeat: no-repeat;
-            margin: 0;
-            padding: 0;
-            background-size: cover;
+    body {
+      background-image: url(https://insights.som.yale.edu/sites/default/files/styles/max_1300x1300/public/2022-10/space.jpeg?itok=ee8bV8ok);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
-        }
+    h1 {
+      text-align: center;
+    }
 
-        .box {
-            text-align: center;
-            margin-top: 20%;
-            position: relative;
-        }
+    h1 span:nth-child(1) { color: cornflowerblue; }
+    h1 span:nth-child(2) { color: red; }
+    h1 span:nth-child(3) { color: gold; }
+    h1 span:nth-child(4) { color: cornflowerblue; }
 
-        .box button {
-            color: rgb(0, 0, 0);
-            border: 2px solid rgb(0, 195, 255);
-            border-radius: 7px;
-            padding: 10px 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 14px;
-            background: rgb(0, 195, 255);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20%;
+    }
 
-        .box button:hover {
-            background: transparent;
-            color: white;
-            border-color: white;
-            box-shadow: 0 0 15px rgb(0, 194, 253);
-        }
+    .button-group button {
+      color: rgb(0, 0, 0);
+      border: 2px solid rgb(0, 195, 255);
+      border-radius: 7px;
+      padding: 10px 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+      background: rgb(0, 195, 255);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
 
-        /* Diamond Shape Stars */
-        .stars {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background-color: gold ;
-            transform: rotate(45deg);
-            box-shadow: 0 0 10px white;
-            opacity: 1;
-            transition: transform 0.5s ease-out, opacity 0.5s ease-in-out;
-        }
+    .button-group button:hover {
+      background: transparent;
+      color: white;
+      border-color: white;
+      box-shadow: 0 0 15px rgb(0, 194, 253);
+    }
 
-        .stars.large {
-            width: 10px;
-            height: 10px;
-        }
+    .stars {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: gold;
+      transform: rotate(45deg);
+      box-shadow: 0 0 10px white;
+      opacity: 1;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-in-out;
+    }
 
-        h1 {
-            text-align: center;
-            
-        }
+    .stars.large {
+      width: 10px;
+      height: 10px;
+    }
 
-        h1 span:nth-child(1) {
-            color: cornflowerblue;
-        }
+    a {
+      text-decoration: none;
+      background-color: rgb(0, 195, 255);
+    }
 
-        h1 span:nth-child(2) {
-            color: red;
-        }
-
-        h1 span:nth-child(3) {
-            color: gold;
-        }
-
-        h1 span:nth-child(4) {
-            color: cornflowerblue;
-        }
-
-        a {
-            text-decoration: none;
-            background-color: rgb(0, 195, 255);;
-            
-        }
-
-        a:hover {
-            background-color: black;
-            color: white;
-            
-        }
-
-
+    a:hover {
+      background-color: black;
+      color: white;
+    }

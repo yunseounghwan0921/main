@@ -5,69 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>main</title>
   <link rel="stylesheet" href="main.css" />
-</head>
-<body class="body">
-  <h1>
-    <span>m</span>
-    <span>a</span>
-    <span>i</span>
-    <span>n</span>
-  </h1>
   
-  <div class="box">
-    <button id="glowButton">사이트 가기</button>
+    
+</head>
+<body>
+  <h1>
+    <span>m</span><span>a</span><span>i</span><span>n</span>
+  </h1>
+
+  <div class="button-group">
+    <!-- 기존 버튼 -->
+    <button id="glowButton">도움이 사이트</button>
+
+    <!-- 추가된 버튼 -->
+    <button id="secondButton">학급 사이트</button>
   </div>
 
   <script>
-    const button = document.getElementById("glowButton");
-    let stars = [];
+    function addGlowEffect(button) {
+      button.addEventListener("mouseover", () => {
+        removeStars();
+        for (let i = 0; i < 5; i++) {
+          let star = document.createElement("div");
+          star.classList.add("stars");
+          if (Math.random() > 0.5) star.classList.add("large");
+          document.body.appendChild(star);
 
-    // 마우스 오버 시 별 애니메이션
-    button.addEventListener("mouseover", () => {
-      removeStars();
-      for (let i = 0; i < 5; i++) {
-        let star = document.createElement("div");
-        star.classList.add("stars");
-        if (Math.random() > 0.5) star.classList.add("large");
-        document.body.appendChild(star);
+          let buttonRect = button.getBoundingClientRect();
+          let startX = Math.random() * buttonRect.width + buttonRect.left;
+          let startY = Math.random() * buttonRect.height + buttonRect.top;
 
-        let buttonRect = button.getBoundingClientRect();
-        let startX = Math.random() * buttonRect.width + buttonRect.left;
-        let startY = Math.random() * buttonRect.height + buttonRect.top;
+          star.style.left = `${startX}px`;
+          star.style.top = `${startY}px`;
 
-        star.style.left = `${startX}px`;
-        star.style.top = `${startY}px`;
+          setTimeout(() => {
+            let angle = Math.random() * 2 * Math.PI;
+            let distance = Math.random() * 50 + 20;
+            let moveX = Math.cos(angle) * distance;
+            let moveY = Math.sin(angle) * distance;
+            star.style.transform = `rotate(45deg) translate(${moveX}px, ${moveY}px)`;
+            star.style.opacity = "1";
+          }, 50);
+        }
+      });
 
-        setTimeout(() => {
-          let angle = Math.random() * 2 * Math.PI;
-          let distance = Math.random() * 50 + 20;
-          let moveX = Math.cos(angle) * distance;
-          let moveY = Math.sin(angle) * distance;
-          star.style.transform = `rotate(45deg) translate(${moveX}px, ${moveY}px)`;
-          star.style.opacity = "1";
-        }, 50);
-
-        stars.push(star);
-      }
-    });
-
-    button.addEventListener("mouseleave", removeStars);
+      button.addEventListener("mouseleave", removeStars);
+    }
 
     function removeStars() {
-      stars.forEach(star => {
+      document.querySelectorAll(".stars").forEach(star => {
         star.style.opacity = "0";
         setTimeout(() => star.remove(), 500);
       });
-      stars = [];
     }
 
-    // ✅ 클릭 시 3초 후 링크로 이동
-    button.addEventListener("click", () => {
-      button.disabled = true; // 여러 번 클릭 방지
-      button.textContent = "1초 후 이동 중...";
+    const button1 = document.getElementById("glowButton");
+    const button2 = document.getElementById("secondButton");
 
+    addGlowEffect(button1);
+    addGlowEffect(button2);
+
+    // 버튼 클릭 시 각각 다른 링크로 1초 후 이동
+    button1.addEventListener("click", () => {
+      button1.disabled = true;
+      button1.textContent = "1초 후 이동 중...";
       setTimeout(() => {
         window.location.href = "https://yunseounghwan0921.github.io/helper/";
+      }, 1000);
+    });
+
+    button2.addEventListener("click", () => {
+      button2.disabled = true;
+      button2.textContent = "1초 후 이동 중...";
+      setTimeout(() => {
+        window.location.href = "https://yunseounghwan0921.github.io/yunseounghwan/";
       }, 1000);
     });
   </script>
