@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Main</title>
-  <link rel="stylesheet" href="maintest.css" />
+  <title>main</title>
   <style>
-    /* floating-image 스타일도 HTML에 직접 넣었어 */
+    /* 기본 스타일 생략 가능, 필요하면 main.css 사용 */
+
     .floating-image {
       position: fixed;
-      width: 80px;
+      width: 150px;      /* 크기 키움 */
       height: auto;
       opacity: 0;
-      animation: fadeInOut 4s ease-in-out forwards;
+      animation: fadeInOut 1s ease-in-out forwards; /* 2초 → 1초 */
       z-index: 1;
       pointer-events: none;
     }
@@ -36,6 +36,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <h1>
@@ -45,10 +46,11 @@
   <div class="button-group">
     <button id="glowButton">도움이 사이트</button>
     <button id="secondButton">학급 사이트</button>
+    <button id="catchButton">주혁이잡기</button>
   </div>
 
   <script>
-    // 기존 별 효과 코드
+    // 별 효과 기존 함수
     function addGlowEffect(button) {
       button.addEventListener("mouseover", () => {
         removeStars();
@@ -86,11 +88,14 @@
       });
     }
 
+    // 버튼들
     const button1 = document.getElementById("glowButton");
     const button2 = document.getElementById("secondButton");
+    const button3 = document.getElementById("catchButton");
 
     addGlowEffect(button1);
     addGlowEffect(button2);
+    addGlowEffect(button3);
 
     button1.addEventListener("click", () => {
       button1.disabled = true;
@@ -108,17 +113,25 @@
       }, 1000);
     });
 
+    button3.addEventListener("click", () => {
+      button3.disabled = true;
+      button3.textContent = "1초 후 이동 중...";
+      setTimeout(() => {
+        window.location.href = "https://yunseounghwan0921.github.io/-/";
+      }, 1000);
+    });
 
-    //  이미지 랜덤 등장 및 사라짐 효과
-    const imgSrc = "스크린샷 2025-08-02 010105.png"; // 이미지 경로 반드시 정확히 설정!
+
+    // 배경에서 큰 이미지 빠르게 생성/사라짐
+    const imgSrc = "스크린샷 2025-08-02 010105.png";
 
     function spawnFloatingImage() {
       const img = document.createElement("img");
       img.src = imgSrc;
       img.className = "floating-image";
 
-      const maxWidth = window.innerWidth - 100;
-      const maxHeight = window.innerHeight - 100;
+      const maxWidth = window.innerWidth - 160; // 이미지 크기 + 여유
+      const maxHeight = window.innerHeight - 160;
 
       const x = Math.random() * maxWidth;
       const y = Math.random() * maxHeight;
@@ -130,11 +143,10 @@
 
       setTimeout(() => {
         img.remove();
-      }, 4000); // 4초 후 제거 (애니메이션과 동일)
+      }, 1000); // 애니메이션 1초와 동일하게 제거
     }
 
-    // 2초 간격으로 이미지 생성 반복
-    setInterval(spawnFloatingImage, 2000);
+    setInterval(spawnFloatingImage, 1000); // 1초마다 생성
   </script>
 </body>
 </html>
