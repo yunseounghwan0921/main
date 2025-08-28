@@ -137,8 +137,11 @@ a:hover {
 }
 
 .easter-egg {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #090a0f 0%, #32a846 100%);
   overflow: hidden;
   font-size: 100px;
   border: none;
+  border-radius: 10%;
+  width: 300px;
+  height: 140px;
 }
