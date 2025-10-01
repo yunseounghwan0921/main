@@ -52,6 +52,7 @@
     <button id="glowButton">도움이 사이트</button>
     <button id="secondButton">학급 사이트</button>
     <button id="catchButton">계산기</button>
+    <button id="padlet">padlet</button>
   </div>
 
 
@@ -98,10 +99,12 @@
     const button1 = document.getElementById("glowButton");
     const button2 = document.getElementById("secondButton");
     const button3 = document.getElementById("catchButton");
+    const button4 = document.getElementById("padlet")
 
     addGlowEffect(button1);
     addGlowEffect(button2);
     addGlowEffect(button3);
+    addGlowEffect(button4);
 
     button1.addEventListener("click", () => {
       button1.disabled = true;
@@ -124,6 +127,14 @@
       button3.textContent = "1초 후 이동 중...";
       setTimeout(() => {
         window.location.href = "https://yunseounghwan0921.github.io/calculating/";
+      }, 1000);
+    });
+
+    button4.addEventListener("click", () => {
+      button1.disabled = true;
+      button1.textContent = "1초 후 이동 중...";
+      setTimeout(() => {
+        window.location.href = "https://padlet.com/doanhigh/1-4-5mmkephtsiv9j1ew";
       }, 1000);
     });
 
