@@ -78,7 +78,7 @@ h1 span:nth-child(4) { color: cornflowerblue; }
 /* 버튼 링크 a태그 */
 a {
   text-decoration: none;
-  background-color: rgb(0, 195, 255);
+  background-color: rgb(0, 0, 0);
 }
 
 a:hover {
@@ -143,4 +143,106 @@ a:hover {
   border-radius: 15%;
   width: 300px;
   height: 140px;
+}
+
+/* 햄버거 버튼 */
+.hamburger {
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hamburger:hover {
+  color: white; /* hover 시에도 흰색 유지 */
+  transform: scale(1.1);
+}
+
+/* 메뉴 패널 */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: -260px; /* 숨겨진 상태 */
+  width: 240px;
+  height: 100%;
+  background: #000; /* 불투명한 검정 배경 */
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  padding-top: 80px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.6);
+  border-right: 2px solid rgba(50, 50, 50, 0.8);
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu ul li {
+  margin: 25px 0;
+  text-align: center;
+}
+
+/* 메뉴 버튼 */
+.nav-menu ul li a {
+  color: white; /* 글씨 흰색 유지 */
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-menu ul li a:hover {
+  color: white; /* hover 시 글씨도 흰색 유지 */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* 살짝 강조 느낌 */
+}
+
+/* 메뉴 활성화 상태 */
+.nav-menu.active {
+  left: 0;
+}
+
+/* 드롭다운 */
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: white; /* 글씨 흰색 */
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.dropdown-btn:hover {
+  color: white; /* hover 시 글씨 흰색 */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.dropdown-content li {
+  margin: 10px 0;
+}
+
+.dropdown-content li a {
+  color: white; /* 글씨 흰색 */
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.dropdown-content li a:hover {
+  color: white; /* hover 시 글씨 흰색 */
+}
+
+.dropdown-content.active {
+  display: flex;
 }
