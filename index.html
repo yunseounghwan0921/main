@@ -113,15 +113,11 @@
     // 버튼들
     const button1 = document.getElementById("glowButton");
     const button2 = document.getElementById("secondButton");
-    const button3 = document.getElementById("catchButton");
-    const button4 = document.getElementById("padlet")
-    const button5 = document.getElementById("mathpadlet");
+ 
 
     addGlowEffect(button1);
     addGlowEffect(button2);
-    addGlowEffect(button3);
-    addGlowEffect(button4);
-    addGlowEffect(button5);
+   
 
     button1.addEventListener("click", () => {
       button1.disabled = true;
@@ -139,29 +135,6 @@
       }, 1000);
     });
 
-    button3.addEventListener("click", () => {
-      button3.disabled = true;
-      button3.textContent = "1초 후 이동 중...";
-      setTimeout(() => {
-        window.location.href = "https://yunseounghwan0921.github.io/calculating/";
-      }, 1000);
-    });
-
-    button4.addEventListener("click", () => {
-      button4.disabled = true;
-      button4.textContent = "1초 후 이동 중...";
-      setTimeout(() => {
-        window.location.href = "https://padlet.com/doanhigh/1-4-5mmkephtsiv9j1ew";
-      }, 1000);
-    });
-
-    button5.addEventListener("click", () => {
-      button5.disabled = true;
-      button5.textContent = "1초 후 이동 중...";
-      setTimeout(() => {
-        window.location.href = "https://joo.is/도안고수학";
-      }, 1000);
-    });
 
     function 이스터애그() {
       alert("숨겨진 이스터에그가 있습니다. 찾아내신 분께 소량의 상품을 드립니다. \n *선착순 1명* \n *힌트1: 1-4반* \n *힌트2: 계산기*")
