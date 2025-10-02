@@ -137,13 +137,23 @@ a:hover {
 }
 
 .easter-egg {
-  background: radial-gradient(ellipse at bottom, #090a0f 0%,);
+  background: transparent; /* 배경 투명으로 만들기 */
   font-size: 100px;
   border: none;
   border-radius: 15%;
   width: 250px;
   height: 140px;
+  color: white; /* 글씨 흰색 */
+  cursor: pointer;
+  text-align: center;
+  line-height: 140px; /* 글씨 세로 중앙 정렬 */
+  transition: transform 0.2s;
 }
+
+.easter-egg:hover {
+  transform: scale(1.05); /* 살짝 커지는 효과로 존재감 */
+}
+
 
 /* 햄버거 버튼 */
 .hamburger {
