@@ -6,7 +6,7 @@
 }
 
 body {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #fbb3ff 100%);
   overflow: hidden;
   height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -137,8 +137,7 @@ a:hover {
 }
 
 .easter-egg {
-  background: radial-gradient(ellipse at bottom, #090a0f 0%, 100%);
-  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #090a0f 0%,);
   font-size: 100px;
   border: none;
   border-radius: 15%;

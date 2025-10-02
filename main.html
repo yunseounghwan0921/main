@@ -53,6 +53,7 @@
     <button id="secondButton">학급 사이트</button>
     <button id="catchButton">계산기</button>
     <button id="padlet">padlet</button>
+    <button id="mathpadlet">수학 패들렛</button>
   </div>
 
 
@@ -100,11 +101,13 @@
     const button2 = document.getElementById("secondButton");
     const button3 = document.getElementById("catchButton");
     const button4 = document.getElementById("padlet")
+    const button5 = document.getElementById("mathpadlet");
 
     addGlowEffect(button1);
     addGlowEffect(button2);
     addGlowEffect(button3);
     addGlowEffect(button4);
+    addGlowEffect(button5);
 
     button1.addEventListener("click", () => {
       button1.disabled = true;
@@ -131,10 +134,18 @@
     });
 
     button4.addEventListener("click", () => {
-      button1.disabled = true;
-      button1.textContent = "1초 후 이동 중...";
+      button4.disabled = true;
+      button4.textContent = "1초 후 이동 중...";
       setTimeout(() => {
         window.location.href = "https://padlet.com/doanhigh/1-4-5mmkephtsiv9j1ew";
+      }, 1000);
+    });
+
+    button5.addEventListener("click", () => {
+      button5.disabled = true;
+      button5.textContent = "1초 후 이동 중...";
+      setTimeout(() => {
+        window.location.href = "https://joo.is/도안고수학";
       }, 1000);
     });
 
