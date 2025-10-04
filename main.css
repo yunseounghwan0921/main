@@ -22,10 +22,10 @@ h1 {
   text-shadow: 2px 2px 5px #000;
 }
 
-h1 span:nth-child(1) { color: cornflowerblue; }
-h1 span:nth-child(2) { color: red; }
-h1 span:nth-child(3) { color: gold; }
-h1 span:nth-child(4) { color: cornflowerblue; }
+h1 span:nth-child(1) { color: rgb(142, 70, 125); }
+h1 span:nth-child(2) { color: rgb(233, 123, 225); }
+h1 span:nth-child(3) { color: rgb(192, 105, 221); }
+h1 span:nth-child(4) { color: rgb(142, 80, 213); }
 
 /* 버튼 그룹 */
 .button-group {
@@ -38,12 +38,12 @@ h1 span:nth-child(4) { color: cornflowerblue; }
 
 /* 버튼 스타일 */
 .button-group button {
-  color: black;
-  border: 2px solid rgb(0, 195, 255);
+  color: rgb(216, 209, 209);
+  border: 2px solid rgb(85, 41, 86);
   border-radius: 10px;
   padding: 12px 24px;
   font-size: 16px;
-  background: rgb(0, 195, 255);
+  background: rgb(92, 23, 142);
   cursor: pointer;
   position: relative;
   overflow: hidden;
